@@ -9,3 +9,14 @@ def load_matches():
     with open('sports_events.json', 'r') as file:
         data = json.load(file)
         return data['matches']
+        
+# Команда /start
+@bot.message_handler(commands=['start'])
+def send_welcome(message):
+    welcome_text = (
+        "Привет! Я спортивный бот, который может предоставить информацию о спортивных событиях.\n"
+        "Используйте следующие команды:\n"
+        "/matches - Посмотреть список спортивных событий\n"
+        "/help - Получить помощь по командам"
+    )
+    bot.send_message(message.chat.id, welcome_text)
