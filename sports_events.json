@@ -1,0 +1,16 @@
+{
+    "matches": [
+        {
+            "date": "2024-10-01",
+            "home_team": "Team A",
+            "away_team": "Team B",
+            "score": "2-1"
+        },
+        {
+            "date": "2024-10-02",
+            "home_team": "Team C",
+            "away_team": "Team D",
+            "score": "1-3"
+        }
+    ]
+}
