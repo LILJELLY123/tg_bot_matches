@@ -30,3 +30,15 @@ def send_help(message):
         "/matches - Посмотреть список спортивных событий"
     )
     bot.send_message(message.chat.id, help_text)
+    
+# Команда для получения спортивных событий
+@bot.message_handler(commands=['matches'])
+def send_matches(message):
+    matches = load_matches()
+    response = "Спортивные события:\n"
+    for match in matches:
+        response += f"{match['date']}: {match['home_team']} vs {match['away_team']} (Score: {match['score']})\n"
+    bot.send_message(message.chat.id, response)
+
+# Запуск бота
+bot.polling()
