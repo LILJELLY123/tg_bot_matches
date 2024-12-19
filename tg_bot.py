@@ -20,3 +20,13 @@ def send_welcome(message):
         "/help - Получить помощь по командам"
     )
     bot.send_message(message.chat.id, welcome_text)
+
+# Команда /help
+@bot.message_handler(commands=['help'])
+def send_help(message):
+    help_text = (
+        "Доступные команды:\n"
+        "/start - Приветствие и информация о боте\n"
+        "/matches - Посмотреть список спортивных событий"
+    )
+    bot.send_message(message.chat.id, help_text)
